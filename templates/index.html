@@ -1,0 +1,151 @@
+{% include "header.html" %}
+  <!---home--->
+  <section class="home" id="home">
+    <div class="home-text">
+      <h3 id="merhaba">Merhaba;</h3>
+      <h1>
+        <span>Ben </span> <span class="erkam" id="ex">E</span><span class="ra">r</span><span
+          class="erkam">k</span><span class="ra">a</span><span class="erkam">m</span><br />
+        <span>Esen</span>
+      </h1>
+      <h3>Web - Back-End Developer</h3>
+      <a href="#contact" class="btn">İletişim.</a>
+    </div>
+  </section>
+
+  <!---about--->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="{{ url_for('static', filename='img/erkam.png')}}" alt="Profile Pictures" />
+    </div>
+
+    <div class="about-text">
+      <h2>Hakkımda</h2>
+      <h4>
+        Merhabalar, Ben Erkam. <br>
+
+      </h4>
+      <p>
+        "Back-End Developer" odaklı bir yazılım geliştiricisi olarak, veri yapıları ve algoritmalar konusunda bir
+        temele sahibim ve programlama dili olarak Python'da uzamanlaşmak için çalışıyorum. Çeşitli teknolojiler hakkında
+        sağlam bir anlayışa sahibim; Postgresql ve MongoDB gibi veritabanlarının yanı sıra Redis gibi bellek içi veri
+        depolarına da hakimim. <br> Bir Web Developer olarak HTML, CSS, JavaScript ve Flask Framework hakkında bilgi sahibiyim. Her
+        zaman becerilerimi ve bilgilerimi yeni zorluklara uygulamanın ve bir geliştirici olarak öğrenmeye ve büyümeye
+        devam etmenin yollarını arıyorum. Öğrenme yeteneğim güçlüdür, yeni teknolojilere kolayca uyum sağlayabilirim.
+        Kodlamayı ve özellikle öğrendiklerim ile üretmeyi çok seven bir insanım.
+
+      </p>
+      <hr style="color:#eb4a4a" ><br>
+      <p>Karabük Üniversitesi'nden Enerji Sistemleri Mühendisi olarak mezun oldum ve aynı zamanda Anadolu Üniversitesi
+        Bilgisayar Programcılığı öğrencisiyim. 1,5 yıllık 'CNC Programlama-Operatör' deneyimim var. 14 yıldır müzik
+        sektörünün içindeyim.Bunu bi' Düşünelim adında bir indie rock grubum var. Çalabildiğim enstrümanlar gitar,davul ve piyano.</p>
+     
+  </section>
+
+  <!---services--->
+  <section class="services" id="services">
+    <div class="main-text">
+      <h2>Hizmetlerim</h2>
+      <h4>Çok Deneyim,Daha İyi Tasarım</h4>
+    </div>
+
+    <div class="services-content">
+      <div class="box">
+        <img src="img/serv1.png" />
+        <h3>Mobile Uyumlu Tasarım</h3>
+        <p>
+          Bu tasarım, mobil cihazların daha küçük ekran boyutlarına ve farklı
+          özelliklere uyum sağlar.Mobil uyumlu yani responsive web tasarımların bir çok avantajı vardır.Mobil uyumlu web
+          siteler , uygun maliyetli, kolay yönetilebilir, seo dostu ve kullanıcı deneyimini arttıran web sitelerdir.
+        </p>
+      </div>
+
+      <div class="box">
+        <img src="img/serv2.png" />
+        <h3>Website Tasarımı</h3>
+        <p>Web tasarım ayrıca web uygulamalarını, mobil uygulamaları ve kullanıcı ara yüzü tasarımını içerir.Web
+          siteniz, potansiyel bir müşterinin işletmenizle olan ilk teması olduğundan, işte bu nedenle işinizin DNA'sına
+          giriyor ve sizinle birlikte çalışarak sitenizin doğru ziyaretçileri cezbetmesini, onlarla etkileşimde
+          bulunmasını ve müşterilere dönüştürmesini sağlıyorum.
+        </p>
+      </div>
+
+      <div class="box">
+        <img src="img/serv3.png" />
+        <h3>Fotoğraf|Video Düzenleme</h3>
+        <p>
+          Sosyal medya,günümüzde önemli bir konu olma özelliğini korur çünkü sosyal medya platformlarında paylaşılan
+          fotoğraflar ve videolar, kullanıcıların dikkatini çekmeye çalışan ve onların ilgisini çekmeye yönelik olarak
+          tasarlandığı için düzenlenmiş olmaları önemlidir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!---portfolio--->
+  <section class="portfolio" id="portfolio">
+    <div class="main-text">
+      <h2>Çalışmalarım</h2>
+      <h4>Seçkin Çalışmalarımdan Bazıları</h4>
+    </div>
+
+    <div class="portfolio-content">
+      {% for project in projects %}
+      <div class="row">
+        <a href="{{ url_for('show_project', id=project.get('_id')) }}">
+          <img src="{{ project.get('img_url') }}"/>
+        </a>
+        <div class="main-row">
+          <div class="row-text">
+            <h6>{{ project.get("title")}}</h6>
+          </div>
+          <!--  if current_user.username == "erkamesen"  -->
+          <div class="row-icon">
+              <a href="{{ url_for('delete_project', id=project.get('_id'))}}">Sil</a>
+          </div>
+          <div class="row-icon">
+            <a href="{{ url_for('edit_project', id=project.get('_id'))}}">Edit</a>
+        </div>
+        <!--  endif  -->
+        </div>
+        <h3>{{ project.get("subtitle")}}</h3>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <!---contact--->
+  <section class="contact" id="contact">
+    <div class="contact-text">
+      <h2>İletişim için</h2>
+      <h4>Birlikte Çalışalım</h4>
+      <p>
+        Reklam, iş birliği veya sorularınız için benimle iletişime geçebilirsiniz.
+      </p>
+      <div class="contact-list">
+        <li>Turkey - Karabük/Safranbolu</li>
+        <li>erkamesen789@gmail.com</li>
+        <li>0506 979 02 02</li>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form">
+      <form action="" method="post">
+        {{ form.csrf_token }}
+        {{ form.name }}
+        {{ form.email }}
+        {{ form.subject }}
+        {{ form.text }}
+        {{ form.submit(class_="send")}}
+      </form>
+    </div>
+  </section>
+{% include "footer.html" %}
+
+
+        <!-- DURUMA GÖRE HTML FORM -->
+        <!-- <input type="text" name="name" placeholder="İsminizi giriniz..." required />
+        <input type="email" name="mail" placeholder="Mail adresinizi yazınız..." required />
+        <input type="text" name="title" placeholder="Konu başlığını giriniz..." required /> 
+        <textarea name="mesaj" cols="40" rows="10" placeholder="Mesajınızı buraya yazınız..." required></textarea>
+        <input type="submit" value="Gönder" class="send" id="buton"/> -->

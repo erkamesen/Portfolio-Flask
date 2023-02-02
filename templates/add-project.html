@@ -1,0 +1,62 @@
+{% include "header.html" %}
+<section class="home" id="home" style="background-image: url(../static/img/project.png);">
+    <div class="home-text">
+      {% if not is_edit %}
+      <h1>
+        Yeni Çalışma Ekle
+      </h1>
+      <h2>
+        Hünerlerini Herkese Göster..
+      </h2>
+      {% else %}
+      <h1>
+        Çalışmayı Düzenle
+      </h1>
+      {% endif %}
+    </div>
+  </section>
+  {% if not is_edit %}
+  <section class="proje">
+    <div class="contact-form">
+      <!-- {{ ckeditor.create(value=article_body) }} -->
+      <form action="" method="post">
+        {{ form.csrf_token }}
+        {{ form.title.label(class_="label") }}
+        {{ form.title(required='required') }}
+        {{ form.subtitle.label(class_="label") }}
+        {{ form.subtitle(required='required') }}
+        {{ form.img_url.label(class_="label") }}
+        {{ form.img_url(required='required') }}
+        {{ form.body.label(class_="label") }}
+        {{ form.body(required='required') }}
+        
+        {{ form.submit(class_="send")}}
+
+      </form>
+      {{ ckeditor.load() }}
+        {{ ckeditor.config(name='body') }}
+    </div>
+  </section>
+  {% else %}
+  <section class="proje">
+    <div class="contact-form">
+      
+      <form action="" method="post">
+        {{ form.csrf_token }}
+        {{ form.title(required='required') }}
+        {{ form.subtitle(required='required') }}
+        {{ form.img_url(required='required') }}
+        {{ ckeditor.create(value=article_body, name='body') }} 
+        {{ ckeditor.load() }}
+        {{ ckeditor.config(name='body') }}
+        {{ form.submit(class_="send", value="Düzenle")}}
+
+      </form>
+    
+    </div>
+  </section>
+  {% endif %}
+  
+ 
+
+{% include "footer.html" %}

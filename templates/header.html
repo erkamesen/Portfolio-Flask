@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erkam Esen</title>
+  <!---custom css link--->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
+
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!---header--->
+  <header>
+    
+    <div class="bx bx-menu" id="menu-icon"></div>
+
+    <ul class="navbar">
+      <li><a href="http://127.0.0.1:5000/#home">Anasayfa</a></li>
+      <li><a href="http://127.0.0.1:5000/#about">Hakkımda</a></li>
+      <li><a href="http://127.0.0.1:5000/#services">Hizmetlerim</a></li>
+      <li><a href="http://127.0.0.1:5000/#portfolio">Çalışmalarım</a></li>
+      <li><a href="http://127.0.0.1:5000/#contact">İletişim</a></li>
+      <!--  if current_user.username == "erkamesen"  -->
+      <li><a href="{{ url_for('logout')}}">Çıkış Yap</a></li>
+      <li><a href="{{ url_for('create_project')}}">Çalışma Ekle</a></li>
+      <!--  endif  -->
+      
+    </ul>
+  </header>

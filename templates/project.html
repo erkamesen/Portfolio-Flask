@@ -1,0 +1,58 @@
+{% include "header.html" %}
+<section class="home" id="home" style="background-image: url(../static/img/project.jpg);">
+    <div class="home-text">
+
+      <h1>
+        {{ title }}
+      </h1>
+      <h2>
+        {{ subtitle }}
+      </h2>
+    </div>
+    
+  </section>
+  
+  <section class="project">
+    <div class="project" id="project">
+      <h2>{{ title }}</h2> <br>
+      <h3> 
+        {{ subtitle }}
+      </h3> <br>
+      <p style="list-style: circle;">
+      {{ body|safe }}  <!-- HTML decode için kullanıyoruz eğer kullanmazsak tagleri yazıyor. -->
+    </p>
+  </section>
+  
+  <section id="commentSection">
+    <hr style="color:#eb4a4a" ><br>
+    {% for comment in comments %}
+        
+    <ol class="commentlist" id="commentlist">
+    <div class="comment-wrap" id="comment-1765770">
+      <div class="comment-author-wrap">
+        <div class="comment-author">{{ comment.get("author")|e }}</div>
+        <div class="commenterImage">
+          <img src="{{ comment.get('author')|gravatar }}"/> <!-- GRAVATAR -->
+      </div>
+         <div class="comment-time">{{ comment.get("date")|e }}</div>
+      </div>   
+      <div class="comment-content">
+        <p>{{ comment.get("text")|e }}</p>
+      </div>
+    </ol>
+    <hr style="color:#7f7e6b;width:20%;text-align:center;" ><br>
+    {% endfor %}
+  </section>
+  <section class="make-comment">
+    <h1 style="text-align: center;margin-bottom:10px;">Yorumlar</h1>
+    <div class="contact-form">
+      <form action="" method="post">
+        {{ form.csrf_token }}
+        {{ form.name }}
+        {{ form.text }}
+        {{ form.submit(class_="send")}}
+      </form>
+    </div>
+  </section>
+
+{% include "footer.html" %}
