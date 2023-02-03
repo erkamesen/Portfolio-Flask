@@ -24,6 +24,12 @@
   </section>
   
   <section id="commentSection">
+    {% if is_active  %}
+    <form action="{{ url_for('delete_comments')}}" method="post">
+      <input type="text" hidden name="projectID" value="{{ id }}">
+      <button class="home-text" >Delete All Comments</button>
+    </form>
+    {%  endif  %}
     <hr style="color:#eb4a4a" ><br>
     {% for comment in comments %}
         
@@ -35,6 +41,14 @@
           <img src="{{ comment.get('author')|gravatar }}"/> <!-- GRAVATAR -->
       </div>
          <div class="comment-time">{{ comment.get("date")|e }}</div>
+         {% if is_active  %}
+         <div class="home-text">
+            <form action="{{ url_for('delete_comment', text=comment.get('text') ,author=comment.get('author'),date=comment.get('date')) }}" method="post">
+              <input type="text" hidden name="projectID" value="{{ id }}">
+              <button class="home-text" >X</button>
+            </form>
+         </div>
+         {%  endif  %}
       </div>   
       <div class="comment-content">
         <p>{{ comment.get("text")|e }}</p>
@@ -56,3 +70,5 @@
   </section>
 
 {% include "footer.html" %}
+<!-- comment={'author':comment.get('author'),
+                                                'date':comment.get('date'), 'text':comment.get('text')})}} -->

@@ -99,14 +99,14 @@
           <div class="row-text">
             <h6>{{ project.get("title")}}</h6>
           </div>
-          <!--  if current_user.username == "erkamesen"  -->
+          {%  if is_active  %}
           <div class="row-icon">
               <a href="{{ url_for('delete_project', id=project.get('_id'))}}">Sil</a>
           </div>
           <div class="row-icon">
             <a href="{{ url_for('edit_project', id=project.get('_id'))}}">Edit</a>
         </div>
-        <!--  endif  -->
+        {% endif %}
         </div>
         <h3>{{ project.get("subtitle")}}</h3>
       </div>

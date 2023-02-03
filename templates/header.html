@@ -28,10 +28,10 @@
       <li><a href="http://127.0.0.1:5000/#services">Hizmetlerim</a></li>
       <li><a href="http://127.0.0.1:5000/#portfolio">Çalışmalarım</a></li>
       <li><a href="http://127.0.0.1:5000/#contact">İletişim</a></li>
-      <!--  if current_user.username == "erkamesen"  -->
+      {% if is_active  %}
       <li><a href="{{ url_for('logout')}}">Çıkış Yap</a></li>
       <li><a href="{{ url_for('create_project')}}">Çalışma Ekle</a></li>
-      <!--  endif  -->
+      {%  endif  %}
       
     </ul>
   </header>

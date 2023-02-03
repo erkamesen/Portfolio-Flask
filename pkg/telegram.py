@@ -1,9 +1,11 @@
 from enum import Enum
 import requests
 
+
 class Condition(Enum):
 
     MESSAGE = "📩"
+
 
 class Logger:
 
@@ -20,7 +22,7 @@ class Logger:
         url = self._url + "sendMessage"
         resp = requests.post(
             url=url,
-            params = {
+            params={
                 "chat_id": self._chat_id,
                 "text": text
             }
@@ -29,4 +31,3 @@ class Logger:
 
     def message(self, message):
         self.log(message, Condition.MESSAGE)
-        

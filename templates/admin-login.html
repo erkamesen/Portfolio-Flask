@@ -2,6 +2,13 @@
 <section class="error" id="error">
     <div class="home-text" style="width: 100%; height:100%; margin-top:10%;">
    
+      {% with messages = get_flashed_messages() %}  
+      {% if messages %}  
+            {% for message in messages %}  
+                 <h2 style="color: #eb4a4a;">{{ message }}</h2>  
+            {% endfor %}  
+      {% endif %}  
+   {% endwith %}  
         <div class="contact-form">
             <form action="" method="post">
               {{ form.csrf_token }}
