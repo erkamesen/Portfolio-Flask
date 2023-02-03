@@ -739,3 +739,8 @@ pre {
 .text p {
   max-width: 700px;
 }
+
+#alan{
+  text-shadow: 3px 3px #15183a;
+  font-size: 2rem;
+}

@@ -8,7 +8,7 @@
           class="erkam">k</span><span class="ra">a</span><span class="erkam">m</span><br />
         <span>Esen</span>
       </h1>
-      <h3>Web - Back-End Developer</h3>
+      <h3 id="alan">Web / Back-End Developer</h3>
       <a href="#contact" class="btn">İletişim.</a>
     </div>
   </section>
@@ -92,7 +92,7 @@
     <div class="portfolio-content">
       {% for project in projects %}
       <div class="row">
-        <a href="{{ url_for('show_project', id=project.get('_id')) }}">
+        <a href="{{ url_for('project.show_project', id=project.get('_id')) }}">
           <img src="{{ project.get('img_url') }}"/>
         </a>
         <div class="main-row">
@@ -101,10 +101,10 @@
           </div>
           {%  if is_active  %}
           <div class="row-icon">
-              <a href="{{ url_for('delete_project', id=project.get('_id'))}}">Sil</a>
+              <a href="{{ url_for('project.delete_project', id=project.get('_id'))}}">Sil</a>
           </div>
           <div class="row-icon">
-            <a href="{{ url_for('edit_project', id=project.get('_id'))}}">Edit</a>
+            <a href="{{ url_for('project.edit_project', id=project.get('_id'))}}">Edit</a>
         </div>
         {% endif %}
         </div>
