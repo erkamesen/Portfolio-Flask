@@ -14,7 +14,7 @@ admin = Blueprint("admin", __name__,
 
 
 @admin.route("/admin", methods=["GET", "POST"])
-def admin_():
+def admin_login():
     form = AdminForm()
     if request.method == "POST":
         username = request.form.get("username")

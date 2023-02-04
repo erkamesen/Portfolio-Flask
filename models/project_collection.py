@@ -3,9 +3,9 @@ from models.models import Database
 from datetime import date
 
 
-class Mongo(Database):
+class Project(Database):
     def __init__(self, collection):
-        self.db = Mongo.db_name[collection]
+        self.db = Project.db_name[collection]
 
     def add_project(self, title, subtitle, url, body):
         """
@@ -50,6 +50,7 @@ class Mongo(Database):
         Geri kalanları formdan gelen yeni datalar.
         """
         project = self.get_project(id)
+        print(project["title"])
         old_query = {"title": project["title"]}
         new_query = {"$set": {
             "title": new_title,

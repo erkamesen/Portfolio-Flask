@@ -48,39 +48,33 @@
     </div>
 
     <div class="services-content">
+      {% for service in services %}
+          
+     
+      
       <div class="box">
-        <img src="{{url_for('static', filename='img/serv1.jpg')}}" />
-        <h3>Python Geliştirme</h3>
+        <img src="{{ service.get('img_url') }}" />
+        <h3>{{ service.get('title') }}</h3>
         <p>
-          Python günümüzün en popüler dillerinden olup nesne yönelimli, yüksek seviye bir programlama dilidir.Veri analizinden web uygulamalarına kadar
-          bir çok alanda performansı oldukça iyi olan python programlama dilinde kendini geliştiren biri olarak fikirlerinizi veya hayallerinizi dijital
-          dünya da kodlara dönüştürmeniz de size yardımcı olabilirim.
+          {{ service.get('description') }}
         </p>
+        {%  if is_active  %}
+          <div class="row-icon">
+              <a href="{{ url_for('service.delete_service', id=service.get('_id'))}}">Sil</a>
+          </div>
+          <div class="row-icon">
+            <a href="{{ url_for('service.edit_service', id=service.get('_id'))}}">Edit</a>
+        </div>
+        {% endif %}
       </div>
 
-      <div class="box">
-        <img src="{{url_for('static', filename='img/serv1.jpg')}}" />
-        <h3>Website Tasarımı</h3>
-        <p>Web tasarım ayrıca web uygulamalarını, mobil uygulamaları ve kullanıcı ara yüzü tasarımını içerir.Web
-          siteniz, potansiyel bir müşterinin işletmenizle olan ilk teması olduğundan, işte bu nedenle işinizin DNA'sına
-          giriyor ve sizinle birlikte çalışarak sitenizin doğru ziyaretçileri cezbetmesini, onlarla etkileşimde
-          bulunmasını ve müşterilere dönüştürmesini sağlıyorum.
-        </p>
-      </div>
+      {% endfor %}
 
-      <div class="box">
-        <img src="{{url_for('static', filename='img/serv1.jpg')}}" />
-        <h3>Fotoğraf|Video Düzenleme</h3>
-        <p>
-          Sosyal medya,günümüzde önemli bir konu olma özelliğini korur çünkü sosyal medya platformlarında paylaşılan
-          fotoğraflar ve videolar, kullanıcıların dikkatini çekmeye çalışan ve onların ilgisini çekmeye yönelik olarak
-          tasarlandığı için düzenlenmiş olmaları önemlidir.
-        </p>
-      </div>
+ 
     </div>
   </section>
   <!---Languages and Tools--->
-  <section class="techs">
+<!--   <section class="services">
     <h1 class="home-text" style="text-align: center;">Teknolojiler</h1>
   <div style='align-items:center;display: flex;justify-content: center;'>
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3"/>
@@ -96,7 +90,7 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python"/>
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis"/>
     </div>
-  </section>
+  </section> -->
   <!---portfolio--->
   <section class="portfolio" id="portfolio">
     <div class="main-text">

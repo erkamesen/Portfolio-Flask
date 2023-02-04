@@ -2,9 +2,12 @@ from flask import Blueprint, redirect, render_template, url_for, request, sessio
 from controller.utils import admin_only, add_project, add_comments, get_one_project, delete_one_project
 from controller.utils import update_one_project, get_comments, delete_one_comment, delete_all_comments
 from forms import ProjectForm, CommentForm
+from models import Project
 
 project = Blueprint("project", __name__,
                     template_folder="../templates", static_folder="../static")
+
+db = Project(collection="projects")
 
 
 @project.route("/add-project", methods=["GET", "POST"])
@@ -12,10 +15,10 @@ project = Blueprint("project", __name__,
 def create_project():
     form = ProjectForm()
     if request.method == "POST":
-        add_project(form.title.data,
-                    form.subtitle.data,
-                    form.img_url.data,
-                    form.body.data)
+        db.add_project(form.title.data,
+                          form.subtitle.data,
+                          form.img_url.data,
+                          form.body.data)
         return redirect(url_for("home.index"))
     else:
         return render_template("add-project.html", form=form)
@@ -24,14 +27,15 @@ def create_project():
 @project.route("/project/<id>", methods=["GET", "POST"])
 def show_project(id):
     form = CommentForm()
-    comments = get_comments(id)
-    print(comments)
+    comments = db.get_comments(id)
+
     is_active = session.get("is_active", False)
     projectID = id
     if request.method == "POST":
-        name = form.name.data
-        text = form.text.data
-        add_comments(id=id, text=text, author=name)
+        db.add_comment(id,
+                          form.text.data,
+                          form.name.data
+                          )
         return redirect(url_for("project.show_project", id=id))
     else:
         return render_template("project.html", **get_one_project(id),
@@ -45,22 +49,22 @@ def show_project(id):
 @project.route("/delete-project/<id>")
 @admin_only
 def delete_project(id):
-    delete_one_project(id)
+    db.delete_project(id)
     return redirect(url_for("home.index"))
 
 
 @project.route("/edit-project/<id>", methods=["GET", "POST"])
 @admin_only
 def edit_project(id):
-    project = get_one_project(id)
     is_edit = True
+    project = db.get_project(id)
     if request.method == "POST":
-        update_one_project(project,
-                           request.form.get("title"),
-                           request.form.get("subtitle"),
-                           request.form.get("img_url"),
-                           request.form.get("body")
-                           )
+        db.update_project(id,
+                             request.form.get("title"),
+                             request.form.get("subtitle"),
+                             request.form.get("img_url"),
+                             request.form.get("body")
+                             )
         return redirect(url_for("home.index"))
     else:
         edit_form = ProjectForm(
@@ -79,7 +83,7 @@ def delete_comment():
     comment = [request.args.get("text"),
                request.args.get("author"),
                request.args.get("date")]
-    delete_one_comment(id, comment)
+    db.delete_comment(id, comment)
     return redirect(url_for("project.show_project", id=id))
 
 
@@ -87,5 +91,5 @@ def delete_comment():
 @admin_only
 def delete_comments():
     id = request.form.get("projectID")
-    delete_all_comments(id)
+    db.delete_comment(id)
     return redirect(url_for("project.show_project", id=id))

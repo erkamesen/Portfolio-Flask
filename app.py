@@ -4,7 +4,7 @@ from flask_ckeditor import CKEditor
 from flask_gravatar import Gravatar
 
 # Blueprint
-from views import admin, home, project
+from views import admin, home, project, service
 
 from datetime import datetime
 
@@ -19,6 +19,7 @@ app.config.from_pyfile("config.py")
 app.register_blueprint(home)
 app.register_blueprint(project)
 app.register_blueprint(admin)
+app.register_blueprint(service)
 
 @app.context_processor
 def copyright():

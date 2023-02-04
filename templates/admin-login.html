@@ -10,7 +10,7 @@
       {% endif %}  
    {% endwith %}  
         <div class="contact-form">
-            <form action="" method="post">
+            <form action="{{ url_for('admin.admin_login') }}" method="post">
               {{ form.csrf_token }}
              <h2> {{ form.username.label }}</h2>    
               {{ form.username }}
