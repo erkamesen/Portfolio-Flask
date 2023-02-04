@@ -25,6 +25,7 @@ def create_project():
 def show_project(id):
     form = CommentForm()
     comments = get_comments(id)
+    print(comments)
     is_active = session.get("is_active", False)
     projectID = id
     if request.method == "POST":

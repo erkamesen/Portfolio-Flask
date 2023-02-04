@@ -21,6 +21,8 @@ Adı: {name}\nEmail: {email}\nKonu:{subject}\nMesaj:\n  {text}"
     logger.message(message=message)
 
 
+
+
 #### Project ####
 
 # Add
@@ -118,3 +120,7 @@ def admin_only(f):
             return render_template('404.html'), 404
         return f(*args, **kwargs)
     return decorated_function
+
+
+
+
