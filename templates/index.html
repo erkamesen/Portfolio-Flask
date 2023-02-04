@@ -39,29 +39,27 @@
       <p>Karabük Üniversitesi'nden Enerji Sistemleri Mühendisi olarak mezun oldum ve aynı zamanda Anadolu Üniversitesi
         Bilgisayar Programcılığı öğrencisiyim. 1,5 yıllık 'CNC Programlama-Operatör' deneyimim var. 14 yıldır müzik
         sektörünün içindeyim.Bunu bi' Düşünelim adında bir indie rock grubum var. Çalabildiğim enstrümanlar gitar,davul ve piyano.</p>
-     
   </section>
-
   <!---services--->
   <section class="services" id="services">
     <div class="main-text">
       <h2>Hizmetlerim</h2>
-      <h4>Çok Deneyim,Daha İyi Tasarım</h4>
+      <h4>Fikirler ile yazılım arasındaki köprü.</h4>
     </div>
 
     <div class="services-content">
       <div class="box">
-        <img src="img/serv1.png" />
-        <h3>Mobile Uyumlu Tasarım</h3>
+        <img src="{{url_for('static', filename='img/serv1.jpg')}}" />
+        <h3>Python Geliştirme</h3>
         <p>
-          Bu tasarım, mobil cihazların daha küçük ekran boyutlarına ve farklı
-          özelliklere uyum sağlar.Mobil uyumlu yani responsive web tasarımların bir çok avantajı vardır.Mobil uyumlu web
-          siteler , uygun maliyetli, kolay yönetilebilir, seo dostu ve kullanıcı deneyimini arttıran web sitelerdir.
+          Python günümüzün en popüler dillerinden olup nesne yönelimli, yüksek seviye bir programlama dilidir.Veri analizinden web uygulamalarına kadar
+          bir çok alanda performansı oldukça iyi olan python programlama dilinde kendini geliştiren biri olarak fikirlerinizi veya hayallerinizi dijital
+          dünya da kodlara dönüştürmeniz de size yardımcı olabilirim.
         </p>
       </div>
 
       <div class="box">
-        <img src="img/serv2.png" />
+        <img src="{{url_for('static', filename='img/serv1.jpg')}}" />
         <h3>Website Tasarımı</h3>
         <p>Web tasarım ayrıca web uygulamalarını, mobil uygulamaları ve kullanıcı ara yüzü tasarımını içerir.Web
           siteniz, potansiyel bir müşterinin işletmenizle olan ilk teması olduğundan, işte bu nedenle işinizin DNA'sına
@@ -71,7 +69,7 @@
       </div>
 
       <div class="box">
-        <img src="img/serv3.png" />
+        <img src="{{url_for('static', filename='img/serv1.jpg')}}" />
         <h3>Fotoğraf|Video Düzenleme</h3>
         <p>
           Sosyal medya,günümüzde önemli bir konu olma özelliğini korur çünkü sosyal medya platformlarında paylaşılan
@@ -81,7 +79,24 @@
       </div>
     </div>
   </section>
-
+  <!---Languages and Tools--->
+  <section class="techs">
+    <h1 class="home-text" style="text-align: center;">Teknolojiler</h1>
+  <div style='align-items:center;display: flex;justify-content: center;'>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker"/> 
+    <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask"/>
+    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql"/>
+    <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis"/>
+    </div>
+  </section>
   <!---portfolio--->
   <section class="portfolio" id="portfolio">
     <div class="main-text">
@@ -117,7 +132,7 @@
   <section class="contact" id="contact">
     <div class="contact-text">
       <h2>İletişim için</h2>
-      <h4>Birlikte Çalışalım</h4>
+      <h4 style="color:#019bc6;">Birlikte Çalışalım</h4>
       <p>
         Reklam, iş birliği veya sorularınız için benimle iletişime geçebilirsiniz.
       </p>

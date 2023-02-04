@@ -24,6 +24,4 @@ app.register_blueprint(admin)
 def copyright():
     return {"year": datetime.now().year}
 
-@app.errorhandler(404)
-def bad_request(e):
-    return render_template("404.html")
+

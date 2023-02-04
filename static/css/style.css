@@ -744,3 +744,20 @@ pre {
   text-shadow: 3px 3px #15183a;
   font-size: 2rem;
 }
+
+
+.techs img{
+  margin: 20px;
+  width: 4rem;
+  height: 4rem;
+}
+
+.techs h1{
+  color: #0195c0;
+  font-size: 4rem;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 2px 2px whitesmoke;
+  padding-bottom: 20px;
+}
+
