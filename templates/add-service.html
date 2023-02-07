@@ -18,7 +18,6 @@
   {% if not is_edit %}
   <section class="proje">
     <div class="contact-form">
-      <!-- {{ ckeditor.create(value=article_body) }} -->
       <form action="" method="post">
         {{ form.csrf_token }}
         {{ form.title.label(class_="label") }}

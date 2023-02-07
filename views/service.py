@@ -11,6 +11,7 @@ db = Service(collection="services")
 
 
 @service.route("/add-service", methods=["GET", "POST"])
+@admin_only
 def add_service():
     form = ServiceForm()
     if form.validate_on_submit():
@@ -22,6 +23,7 @@ def add_service():
 
 
 @service.route("/edit-service/<id>", methods=["GET", "POST"])
+@admin_only
 def edit_service(id):
     is_edit = True
     service = db.get_service(id)
@@ -43,6 +45,7 @@ def edit_service(id):
 
 
 @service.route("/delete-service/<id>", methods=["GET", "POST"])
+@admin_only
 def delete_service(id):
     db.delete_service(id)
     return redirect(url_for("home.index"))

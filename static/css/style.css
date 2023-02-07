@@ -218,6 +218,8 @@ header.sticky {
   font-weight: 600;
 }
 
+
+
 .services-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -267,11 +269,39 @@ header.sticky {
   margin-top: 5rem;
 }
 
+.portfolio-content img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.techs{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, auto));
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.techs img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.image-wrapper img{
+  width: 50px;
+  height: 50px;
+}
+
 .row img {
   height: auto;
-  width: 100%;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
+}
+
+.image{
+  width:50px;
 }
 
 .row {
@@ -442,7 +472,19 @@ form textarea {
   padding: 10px;
   border-radius: 0.5rem;
 }
+.bottom {
+  position: fixed;
+  bottom: 2.1rem;
+  left: 2.1rem;
+}
 
+.bottom i {
+  color: var(--text-color);
+  background: var(--main-color);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   header {
     padding: 16px 3%;
@@ -744,20 +786,3 @@ pre {
   text-shadow: 3px 3px #15183a;
   font-size: 2rem;
 }
-
-
-.techs img{
-  margin: 20px;
-  width: 4rem;
-  height: 4rem;
-}
-
-.techs h1{
-  color: #0195c0;
-  font-size: 4rem;
-  font-weight: 700;
-  font-style: italic;
-  text-shadow: 2px 2px whitesmoke;
-  padding-bottom: 20px;
-}
-
