@@ -1,6 +1,5 @@
 from flask import Blueprint, redirect, render_template, url_for, request, session
-from controller.utils import admin_only, add_project, add_comments, get_one_project, delete_one_project
-from controller.utils import update_one_project, get_comments, delete_one_comment, delete_all_comments
+from controller.utils import admin_only
 from forms import ProjectForm, CommentForm
 from models import Project
 
@@ -38,7 +37,7 @@ def show_project(id):
                           )
         return redirect(url_for("project.show_project", id=id))
     else:
-        return render_template("project.html", **get_one_project(id),
+        return render_template("project.html", **db.get_project(id),
                                form=form,
                                comments=comments,
                                id=projectID,
