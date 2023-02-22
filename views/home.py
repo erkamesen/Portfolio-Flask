@@ -30,6 +30,4 @@ def index():
                                is_active=is_active)
 
 
-@home.errorhandler(404)
-def bad_request(e):
-    return render_template("404.html")
+

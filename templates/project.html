@@ -25,7 +25,7 @@
   
   <section id="commentSection">
     {% if is_active  %}
-    <form action="{{ url_for('project.delete_comments')}}" method="post">
+    <form action="{{ url_for('project.delete_all_comments')}}" method="post">
       <input type="text" hidden name="projectID" value="{{ id }}">
       <button class="home-text" >Delete All Comments</button>
     </form>

@@ -88,7 +88,7 @@ def delete_comment():
 
 @project.route("/delete-comments", methods=["GET", "POST"])
 @admin_only
-def delete_comments():
+def delete_all_comments():
     id = request.form.get("projectID")
-    db.delete_comment(id)
+    db.delete_comments(id)
     return redirect(url_for("project.show_project", id=id))
