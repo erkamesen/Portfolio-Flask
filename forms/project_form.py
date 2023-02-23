@@ -5,21 +5,21 @@ from wtforms.validators import DataRequired, URL
 
 
 class ProjectForm(FlaskForm):
-    title = StringField("Proje Adı",
+    title = StringField("Project Name",
                         validators=[DataRequired()],
                         render_kw={
-                            "placeholder": "Projenin isminizi giriniz..."}
+                            "placeholder": "Projects Title..."}
                         )
-    subtitle = StringField("Açıklama",
+    subtitle = StringField("Subtitle",
                            validators=[DataRequired()],
                            render_kw={
-                               "placeholder": "Projeye dair bir açıklama giriniz..."}
+                               "placeholder": "Subtitle..."}
                            )
-    img_url = StringField("Resim",
+    img_url = StringField("Image",
                           validators=[DataRequired(), URL()],
                           render_kw={
-                              "placeholder": "Bir resim URL si giriniz..."}
+                              "placeholder": "Image URL..."}
                           )
     body = CKEditorField("İçerik", validators=[DataRequired()],
-                         render_kw={"placeholder": "Projenizin detaylarını giriniz..."})
-    submit = SubmitField("Proje Oluştur.")
+                         render_kw={"placeholder": "Details..."})
+    submit = SubmitField("Create Project.")

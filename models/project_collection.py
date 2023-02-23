@@ -9,7 +9,7 @@ class Project(Database):
 
     def add_project(self, title, subtitle, url, body):
         """
-        Proje eklemek için kullanılacak
+        To be used to add projects
         """
         new_data = {"title": title,
                     "subtitle": subtitle,
@@ -21,16 +21,16 @@ class Project(Database):
 
     def get_projects(self):
         """
-        iterable bir pymongo objesi döndürüyor.For loop ile 
-        döngüye alıp dictionary methodlarını uygulayabilirsiniz.
-        Örnek Sonuç: <pymongo.cursor.Cursor object at 0x7fdc3ba6e1d0>
+        it returns an iterable pymongo object. with for loop
+        you can use dictionary methods.
+        Example Result: <pymongo.cursor.Cursor object at 0x7fdc3ba6e1d0>
         """
         projects = self.db.find()
         return projects
 
     def get_project(self, id):
         """
-        ID sini girdiğiniz kayıdı döndürüyor.
+        It returns the record whose ID you entered.
         type: dict
         """
         objInstance = ObjectId(id)
@@ -39,15 +39,15 @@ class Project(Database):
 
     def delete_project(self, id):
         """
-        ID si girilen kayıdı collection dan siler.
+        Deletes the record whose ID is entered from the collection.
         """
         objInstance = ObjectId(id)
         self.db.delete_one({"_id": objInstance})
 
     def update_project(self, id, new_title, new_subtitle, new_url, new_body):
         """
-        id ye Hangi proje değişcekse onun ID sini veriyoruz.
-        Geri kalanları formdan gelen yeni datalar.
+        for the ID parameter, give the ID of which project will change to the id parameter.
+        other parameters will be filled with information from the form.
         """
         project = self.get_project(id)
         print(project["title"])
@@ -62,8 +62,8 @@ class Project(Database):
 
     def add_comment(self, id, text, author):
         """
-        id ye hangi proye yorum eklenicekse onun ID si
-        'text' ve 'author' Formdan gelen bilgiler için.
+        for the ID parameter, give the ID of the project to which a comment will be added.
+        'text' and 'author' for information from the form.
         """
         objInstance = ObjectId(id)
         project_filter = {"_id": objInstance}
@@ -76,8 +76,8 @@ class Project(Database):
 
     def get_comments(self, id):
         """
-        id nin ait olduğu projenin içinde olan yorumları
-        liste şeklinde döndürür.
+        Returns all comments in the project that the id from the
+         id parameter belongs to as a list.
         Type : List
         """
         objInstance = ObjectId(id)
@@ -87,8 +87,8 @@ class Project(Database):
 
     def delete_comment(self, id, comment):
         """
-        id ye projenin ID sini veriyoruz 
-        comment e [text, author, date] şeklinde bir liste veriyoruz.
+        for the ID parameter, give the ID of the project.
+        for the comment, give a list in the form of [text, author, date] to the comment parameter.
         """
         all_comments = self.get_comments(id)
         for data in all_comments:
@@ -102,7 +102,7 @@ class Project(Database):
 
     def delete_comments(self, id):
         """
-        ID si verilen projenin tüm yorumlarını siler.
+        Deletes all comments of the project whose ID is given.
         """
         objInstance = ObjectId(id)
         self.db.update_one({"_id": objInstance}, {"$set": {"comment": []}})

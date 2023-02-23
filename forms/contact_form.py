@@ -7,21 +7,21 @@ class ContactForm(FlaskForm):
 
     name = StringField("Name",
                        validators=[DataRequired()],
-                       render_kw={"placeholder": "İsminizi giriniz..."}
+                       render_kw={"placeholder": "Name..."}
                        )
     email = StringField("Email",
                         validators=[DataRequired()],
-                        render_kw={"placeholder": "Mail adresinizi yazınız..."}
+                        render_kw={"placeholder": "Email..."}
                         )
-    subject = StringField("Email",
+    subject = StringField("Subject",
                           validators=[DataRequired()],
                           render_kw={
-                              "placeholder": "Konu başlığını giriniz..."}
+                              "placeholder": "Subject..."}
                           )
     text = TextAreaField("Message",
                          validators=[DataRequired()],
                          render_kw={"rows": 10,
                                     "cols": 40,
-                                    "placeholder": "Mesajınızı buraya yazınız..."})
+                                    "placeholder": "Your text here..."})
 
-    submit = SubmitField("Gönder")
+    submit = SubmitField("Submit")

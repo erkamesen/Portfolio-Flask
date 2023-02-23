@@ -7,12 +7,12 @@ class CommentForm(FlaskForm):
 
     name = StringField("Name",
                        validators=[DataRequired()],
-                       render_kw={"placeholder": "İsminizi giriniz..."}
+                       render_kw={"placeholder": "Name..."}
                        )
     text = TextAreaField("Message",
                          validators=[DataRequired()],
                          render_kw={"rows": 10,
                                     "cols": 40,
-                                    "placeholder": "Mesajınızı buraya yazınız..."})
+                                    "placeholder": "Comment..."})
 
-    submit = SubmitField("Gönder")
+    submit = SubmitField("Submit")

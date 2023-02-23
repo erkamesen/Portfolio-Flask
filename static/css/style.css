@@ -195,6 +195,13 @@ header.sticky {
   margin-bottom: 2rem;
 }
 
+.services img {
+  height: auto;
+  width: 100%;
+  max-width: 460px;
+}
+
+
 
 
 .project h2 {
@@ -273,6 +280,7 @@ header.sticky {
   max-width: 100%;
   display: block;
   height: auto;
+
 }
 
 .techs{

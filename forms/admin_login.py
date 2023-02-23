@@ -5,12 +5,12 @@ from wtforms.validators import DataRequired
 
 class AdminForm(FlaskForm):
 
-    username = StringField("Kullanıcı Adı",
+    username = StringField("Username",
                            validators=[DataRequired()],
-                           render_kw={"placeholder": "Kullanıcı Adı.."}
+                           render_kw={"placeholder": "Your Username.."}
                            )
-    password = PasswordField("Şifre",
+    password = PasswordField("Password",
                              validators=[DataRequired()],
-                             render_kw={"placeholder": "Şifre"}
+                             render_kw={"placeholder": "**********"}
                              )
-    submit = SubmitField("Gönder")
+    submit = SubmitField("Send")

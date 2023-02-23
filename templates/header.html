@@ -23,15 +23,15 @@
     <div class="bx bx-menu" id="menu-icon"></div>
 
     <ul class="navbar">
-      <li><a href="http://127.0.0.1:5000/#home">Anasayfa</a></li>
-      <li><a href="http://127.0.0.1:5000/#about">Hakkımda</a></li>
-      <li><a href="http://127.0.0.1:5000/#services">Hizmetlerim</a></li>
-      <li><a href="http://127.0.0.1:5000/#portfolio">Çalışmalarım</a></li>
-      <li><a href="http://127.0.0.1:5000/#contact">İletişim</a></li>
+      <li><a href="http://127.0.0.1:5000/#home">Home</a></li>
+      <li><a href="http://127.0.0.1:5000/#about">About</a></li>
+      <li><a href="http://127.0.0.1:5000/#services">Services</a></li>
+      <li><a href="http://127.0.0.1:5000/#portfolio">Projects</a></li>
+      <li><a href="http://127.0.0.1:5000/#contact">Contacts</a></li>
       {% if is_active  %}
-      <li><a href="{{ url_for('admin.logout')}}">Çıkış Yap</a></li>
-      <li><a href="{{ url_for('project.create_project')}}">Çalışma Ekle</a></li>
-      <li><a href="{{ url_for('service.add_service')}}">Hizmet Ekle</a></li>
+      <li><a href="{{ url_for('admin.logout')}}">Logout</a></li>
+      <li><a href="{{ url_for('project.create_project')}}">Add Project</a></li>
+      <li><a href="{{ url_for('service.add_service')}}">Add Service</a></li>
       {%  endif  %}
       
     </ul>

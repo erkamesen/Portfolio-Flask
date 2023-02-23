@@ -5,18 +5,18 @@ from wtforms.validators import DataRequired, URL
 
 class ServiceForm(FlaskForm):
 
-    title = StringField("Başlık",
+    title = StringField("Title",
                        validators=[DataRequired()],
-                       render_kw={"placeholder": "Hizmetinizin ismini giriniz..."}
+                       render_kw={"placeholder": "Service Title..."}
                        )
-    img_url = StringField("Resim",
+    img_url = StringField("Image",
                           validators=[DataRequired(), URL()],
                           render_kw={
-                              "placeholder": "Bir resim URL si giriniz..."})
+                              "placeholder": "Image URL..."})
     description = TextAreaField("Açıklama",
                          validators=[DataRequired()],
                          render_kw={"rows": 15,
                                     "cols": 40,
-                                    "placeholder": "İçeriğini buraya yazınız..."})
+                                    "placeholder": "Details..."})
 
-    submit = SubmitField("Yayınla")
+    submit = SubmitField("Create Service")

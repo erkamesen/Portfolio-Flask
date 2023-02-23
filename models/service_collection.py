@@ -28,7 +28,7 @@ class Service(Database):
 
     def get_service(self, id):
         """
-        ID sini girdiğiniz kayıdı döndürüyor.
+        It returns the record whose ID you entered.
         type: dict
         """
         objInstance = ObjectId(id)
@@ -37,15 +37,15 @@ class Service(Database):
 
     def delete_service(self, id):
         """
-        ID si girilen kayıdı collection dan siler.
+        Deletes the record whose ID is entered from the collection.
         """
         objInstance = ObjectId(id)
         self.db.delete_one({"_id": objInstance})
 
     def update_service(self, id, new_title, new_description, new_url):
         """
-        id ye Hangi hizmet değişcekse onun ID sini veriyoruz.
-        Geri kalanları formdan gelen yeni datalar.
+        for the ID parameter , give the ID of the service to be changed.
+        other parameters will be filled with information from the form.
         """
         project = self.get_service(id)
         old_query = {"title": project["title"]}

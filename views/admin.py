@@ -19,13 +19,13 @@ def admin_login():
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
-        if username == os.getenv("KULLANICI_ADI") and password == os.getenv("PAROLA"):
+        if username == os.getenv("USERNAME") and password == os.getenv("PASSWORD"):
             session["username"] = username
             session["password"] = generate_password_hash(password)
             session["is_active"] = True
             return redirect(url_for("home.index"))
         else:
-            flash("Lütfen Bilgilerinizi Kontrol Ediniz..")
+            flash("Incorrect username or password.")
             return redirect(url_for("admin"))
     return render_template("admin-login.html", form=form)
 
