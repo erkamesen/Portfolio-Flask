@@ -5,6 +5,26 @@
 - [Snaps](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#snaps)
 
 
+## Database - mongoDB
+*Before we start, we need to create an account in mongodb and get the necessary information for the connection.* <br>
+<br>
+*You can reach the mini guide I prepared for mongodb from the link below. This guide has been prepared in Turkish, but you can follow the pictures to create an account and get important information.*
+<br> <br>
+[Guide](https://github.com/erkamesen/Python-MongoDB#ba%C5%9Flang%C4%B1%C3%A7---kurulum)
+
+
+
+## Usage
+
+
+```
+git clone https://github.com/erkamesen/Portfolio-Flask.git
+```
+
+
+
+
+
 
 ## Snaps
 
