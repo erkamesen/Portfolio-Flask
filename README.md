@@ -1,6 +1,6 @@
 # Portfolio-Flask
 
-*Simple portfolio app designed for show your abilities to people with Flask micro-Framework*
+*Simple portfolio app designed for show your abilities to people with Flask Microframework*
 
 
 ## Content
