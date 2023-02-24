@@ -1,6 +1,5 @@
 from functools import wraps
 from pkg.telegram import Logger
-from models.models import db
 from datetime import date
 from dotenv import load_dotenv
 from bson.objectid import ObjectId

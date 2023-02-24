@@ -9,11 +9,6 @@ load_dotenv()
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
 
-myclient = MongoClient(
-    f"mongodb+srv://{username}:{password}@cluster1.dumyfbl.mongodb.net/?retryWrites=true&w=majority")
-project_db = myclient["PortfolyoFlask"]  # database
-db = project_db["projects"]  # collection
-
 
 class Database:
     _client_URL = MongoClient(
