@@ -2,7 +2,7 @@
 
 ## Content
 
-- [Snaps](https://github.com/erkamesen/Portfolio-Flask/README.md#snaps)
+- [Snaps](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#snaps)
 
 
 
