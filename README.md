@@ -65,7 +65,7 @@ git clone https://github.com/erkamesen/Portfolio-Flask.git
 <div>
 <div align=center>
 <h4 > Projects </h4> 
-<img src=https://user-images.githubusercontent.com/120065120/221108966-1cf32bb0-d663-449d-b9ef-31c6027ce03f.png>
+<img src=https://user-images.githubusercontent.com/120065120/221147421-9ab473b4-b5f6-46db-9180-05e6f64efb90.png>
 <div>
 <div align=center>
 <h4 > Contacts </h4> 
