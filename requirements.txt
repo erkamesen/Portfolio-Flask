@@ -1,0 +1,9 @@
+Flask==2.2.2
+Flask_CKEditor==0.4.6
+Flask_Gravatar==0.5.0
+Flask_WTF==1.1.1
+pymongo==4.3.3
+python-dotenv==1.0.0
+requests==2.25.1
+Werkzeug==2.2.2
+WTForms==3.0.1

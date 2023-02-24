@@ -12,6 +12,29 @@
 <br> <br>
 [Guide](https://github.com/erkamesen/Python-MongoDB#ba%C5%9Flang%C4%B1%C3%A7---kurulum)
 
+<br> <br>
+
+*You will use the username and password you received from mongodb for the cluster connection in python as follows.*
+
+*models.py*
+```
+from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
+
+
+class Database:
+    _client_URL = MongoClient(
+        f"mongodb+srv://{username}:{password}@cluster1.dumyfbl.mongodb.net/?retryWrites=true&w=majority")  # Main connector
+    db_name = _client_URL["PortfolyoFlask"]  # Database Name
+```
+Replace {password} with the password and {username} with the username. 
 
 
 ## Usage
