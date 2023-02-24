@@ -1,6 +1,6 @@
 # Portfolio-Flask
 
-*Simple portfolio app designed for show your abilities to people with Flask Microframework*
+*Simple Portfolio app designed for show your abilities to people with Flask Microframework*
 
 
 ## Content
@@ -94,8 +94,6 @@ flask run
 ```
 *Blog project should now be running on your local machine at http://localhost:5000*
  
-
-
 
 
 
