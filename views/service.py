@@ -51,10 +51,3 @@ def delete_service(id):
     return redirect(url_for("home.index"))
 
 
-"""sumary_line
-Python Geliştirme
-
-Python günümüzün en popüler dillerinden olup nesne yönelimli, yüksek seviye bir programlama dilidir.
-Veri analizinden web uygulamalarına kadar bir çok alanda performansı oldukça iyi olan python programlama dilinde kendini geliştiren biri olarak
- fikirlerinizi veya hayallerinizi dijital dünya da kodlara dönüştürmeniz de size yardımcı olabilirim. 
-"""
