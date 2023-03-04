@@ -92,7 +92,7 @@ pip install -r requirements.txt
 ```
 flask run
 ```
-*Blog project should now be running on your local machine at http://localhost:5000*
+*Portfolio project should now be running on your local machine at http://localhost:5000*
  
 
 
