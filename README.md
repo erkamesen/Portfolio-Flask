@@ -5,7 +5,7 @@
 
 ## Content
 - [Features](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#features)
-- [Tehcnologies](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#tehcnologies)
+- [Technologies](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#technologies)
 - [Database - mongoDB](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#database---mongodb)
 - [Installation & Usage](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#installation--usage)
 - [Snaps](https://github.com/erkamesen/Portfolio-Flask/blob/master/README.md#snaps)
@@ -26,7 +26,7 @@
 - *If the user sends a request to an incorrect endpoint, a customized 404 page is shown.*
 
 
-## Tehcnologies 
+## Technologies 
 <div align=center>
 <img src=https://user-images.githubusercontent.com/25181517/192107854-765620d7-f909-4953-a6da-36e1ef69eea6.png wirdth=60 height=60>
 <img src=https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png wirdth=60 height=60>
