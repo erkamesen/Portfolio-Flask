@@ -1,4 +1,4 @@
-from flask import Blueprint, request, session, render_template
+from flask import Blueprint, request, session, render_template, send_file
 from models import Service, Project
 from forms import ContactForm
 from controller.utils import send_message
@@ -31,3 +31,6 @@ def index():
 
 
 
+@home.route("/download-resume")
+def download():
+    return send_file("./resume.pdf", as_attachment=True)
