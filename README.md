@@ -24,6 +24,7 @@
 - *Project and services can be rearranged after sharing*
 - *If you are logged in as an admin, you can delete comments.*
 - *If the user sends a request to an incorrect endpoint, a customized 404 page is shown.*
+- *Users can download your resume"
 
 
 ## Technologies 
