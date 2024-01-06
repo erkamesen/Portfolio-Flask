@@ -26,7 +26,7 @@ def admin_login():
             return redirect(url_for("home.index"))
         else:
             flash("Incorrect username or password.")
-            return redirect(url_for("admin"))
+            return redirect(url_for("home.index"))
     return render_template("admin-login.html", form=form)
 
 

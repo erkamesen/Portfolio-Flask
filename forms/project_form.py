@@ -20,6 +20,6 @@ class ProjectForm(FlaskForm):
                           render_kw={
                               "placeholder": "Image URL..."}
                           )
-    body = CKEditorField("İçerik", validators=[DataRequired()],
+    body = CKEditorField("Content", validators=[DataRequired()],
                          render_kw={"placeholder": "Details..."})
     submit = SubmitField("Create Project.")

@@ -29,3 +29,7 @@ def copyright():
 @app.errorhandler(404)
 def bad_request(e):
     return render_template("404.html")
+
+
+if __name__ == "__main__":
+    app.run(port=8080)

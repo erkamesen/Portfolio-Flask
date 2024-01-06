@@ -1,15 +1,15 @@
 from pymongo import MongoClient
-from dotenv import load_dotenv
-import os
 
 
-load_dotenv()
-
-username = os.getenv("USERNAME")
-password = os.getenv("PASSWORD")
-
+# Get MongoDB connection details from environment variables
+username = "admin"
+password = "admin"
+host = "mongo"
+port = 27017
 
 class Database:
+    # Use environment variables for MongoDB connection in Docker
     _client_URL = MongoClient(
-        f"mongodb+srv://{username}:{password}@cluster1.dumyfbl.mongodb.net/?retryWrites=true&w=majority")  # Main connector
+        f"mongodb://localhost:27017"
+    )
     db_name = _client_URL["PortfolyoFlask"]  # Database Name
